@@ -54,11 +54,11 @@ class Provider extends AbstractProvider implements ProviderInterface
     protected function mapUserToObject(array $user)
     {
         return (new User())->setRaw($user)->map([
-            'id'       => $user['id'],
+            'id' => $user['id'],
             'nickname' => $user['username'],
-            'name'     => $user['name'],
-            'email'    => $user['email'],
-            'avatar'   => $user['avatar_url'],
+            'name' => $user['name'],
+            'email' => $user['email'],
+            'avatar' => $user['avatar_url'],
         ]);
     }
 
@@ -68,7 +68,7 @@ class Provider extends AbstractProvider implements ProviderInterface
     protected function getTokenFields($code)
     {
         return array_merge(parent::getTokenFields($code), [
-            'grant_type' => 'authorization_code'
+            'grant_type' => 'authorization_code',
         ]);
     }
 
